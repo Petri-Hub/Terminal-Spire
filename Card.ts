@@ -1,4 +1,4 @@
-import { IDamage } from "./attack/IDamage"
+import { IDamage } from "./damage/Damage"
 import { ICost } from "./interfaces/ICost"
 import { IDefense } from "./interfaces/IDefense"
 
