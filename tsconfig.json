@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "ES6",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "moduleResolution": "Node",
+        "preserveConstEnums": true,
+        "allowJs": false,
+        "sourceMap": true,
+        "rootDir": "app",
+        "outDir": "build",
+    },
+}
