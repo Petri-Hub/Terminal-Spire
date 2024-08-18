@@ -18,4 +18,8 @@ export abstract class Entity {
     public getDefense(): NumberBar {
         return this.defense
     }
+
+    public isDead(): boolean {
+        return this.health.getValue() <= 0
+    }
 }

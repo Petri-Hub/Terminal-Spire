@@ -1,6 +1,6 @@
-import { IDamage } from "./damage/Damage"
+import { IDamage } from "../damage/Damage"
 import { ICost } from "./interfaces/ICost"
-import { IDefense } from "./defense/Defense"
+import { IDefense } from "../defense/Defense"
 
 export abstract class Card{
     constructor(

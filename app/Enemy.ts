@@ -1,4 +1,4 @@
-import { IBehavior } from "./interfaces/IBehavior";
+import { IBehavior } from "../interfaces/IBehavior";
 import { Entity } from "./Entity";
 
 export class Enemy extends Entity {

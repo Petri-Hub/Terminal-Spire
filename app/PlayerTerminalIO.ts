@@ -1,5 +1,4 @@
 import { Card } from "./Card";
-import PlayableCard from "./PlayableCard";
 
 export abstract class PlayerTerminalIO {
     static promptHandSelection(hand: Card[]): Card {
