@@ -1,13 +1,13 @@
-import { IDamage } from "../damage/Damage"
-import { ICost } from "./interfaces/ICost"
-import { IDefense } from "../defense/Defense"
+import { AnyDamage } from "./types/AnyDamage"
+import { AnyDefense } from "./types/AnyDefense"
+import { AnyCost } from "./types/AnyCost"
 
 export abstract class Card{
     constructor(
         private name: string,
-        private cost: ICost,
-        private damage: IDamage,
-        private defense: IDefense
+        private cost: AnyCost,
+        private damage: AnyDamage,
+        private defense: AnyDefense
     ){}
 
     getName(){

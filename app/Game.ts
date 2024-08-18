@@ -13,10 +13,10 @@ export class Game{
     }
 
     handlePlayerTurn(){
-        const hand = this.player.getDeck().drawCards(5)
-        const card = PlayerTerminalIO.promptHandSelection(hand)
+        // const hand = this.player.getDeck().drawCards(5)
+        // const card = PlayerTerminalIO.promptHandSelection(hand)
         
-        console.log(card)
+        // console.log(card)
 
     }
 }

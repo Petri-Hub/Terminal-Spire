@@ -1,4 +1,4 @@
-import { StaticDamage } from '../attack/StaticDamage'
+import { StaticDamage } from '../damage/StaticDamage'
 import { StaticDefense } from '../defense/StaticDefense'
 
 export const enemies = [
