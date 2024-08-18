@@ -1,21 +1,16 @@
-import { Action } from "./Action"
-import { IDamage } from "../interfaces/IDamage";
-import { Entity } from "../Entity";
+import { Entity } from "../Entity"
+import { IAction } from "../interfaces/IAction"
+import { AnyDamage } from "../types/AnyDamage"
 
-export class DamageAction extends Action{
+export class DamageAction implements IAction{
+    constructor(
+        private damage: AnyDamage
+    ){}
 
-    private damage: IDamage
-
-    constructor(targets: Entity[], damage: IDamage){
-        super(targets)
-
-        this.damage = damage
-    }
-
-    execute(){
-        this.targets.forEach(target => {
+    execute(targets: Entity[]): void {
+        targets.forEach(entity => {
             const damageAmount = this.damage.calculateDamage()
-            const targetHealth = target.getHealth()
+            const targetHealth = entity.getHealth()
 
             targetHealth.decreaseBy(damageAmount)
         })
