@@ -1,15 +1,8 @@
 import { StaticCalculation } from "../calculations/StaticCalculation";
-import { IDefense } from "../interfaces/IDefense";
+import { Defense } from "./Defense";
 
-export class StaticDefense implements IDefense {
-
-    private calculation: StaticCalculation
-
+export class StaticDefense extends Defense<StaticCalculation>{
     constructor(value: number){
-        this.calculation = new StaticCalculation(value)
-    }
-
-    calculateDefense(): number {
-        return this.calculation.calculate()
+        super(new StaticCalculation(value))
     }
 }

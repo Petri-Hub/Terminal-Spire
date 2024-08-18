@@ -1,4 +1,4 @@
-import { IDefense } from "../interfaces/IDefense";
+import { IDefense } from "../defense/Defense";
 import { Action } from "./Action";
 import { Entity } from "../Entity";
 
