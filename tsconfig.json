@@ -1,13 +1,16 @@
 {
     "compilerOptions": {
-        "module": "ES6",
+        "target": "ES2016",
         "noImplicitAny": true,
         "removeComments": true,
         "moduleResolution": "Node",
         "preserveConstEnums": true,
         "allowJs": false,
         "sourceMap": true,
+        "strict": true,
+        "esModuleInterop": true,
         "rootDir": "app",
         "outDir": "build",
-    },
+        "resolveJsonModule": true
+    }
 }
