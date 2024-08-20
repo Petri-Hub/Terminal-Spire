@@ -5,4 +5,8 @@ export class StaticCost extends Cost<StaticCalculation>{
     constructor(value: number){
         super(new StaticCalculation(value))
     }
+
+    getRepresentation(): string {
+        return this.getCost().toString()
+    }
 }

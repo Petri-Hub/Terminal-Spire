@@ -5,7 +5,9 @@ export abstract class Cost<T extends ICalculation>{
         protected calculation: T
     ){}
 
-    calculateCost(): number {
+    abstract getRepresentation(): string
+
+    getCost(): number {
         return this.calculation.calculate()
     }
 }

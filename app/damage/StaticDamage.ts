@@ -5,4 +5,8 @@ export class StaticDamage extends Damage<StaticCalculation>{
     constructor(value: number){
         super(new StaticCalculation(value))
     }
+
+    getRepresentation(): string {
+        return this.getDamage().toString()
+    }
 }

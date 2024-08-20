@@ -5,4 +5,8 @@ export class RandomDamage extends Damage<RandomCalculation>{
     constructor(min: number, max: number){
         super(new RandomCalculation(min, max))
     }
+
+    getRepresentation(): string {
+        return '?'
+    }
 }
