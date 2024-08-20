@@ -19,7 +19,7 @@ export abstract class Entity {
         return this.defense
     }
 
-    public isDead(): boolean {
-        return this.health.getValue() <= 0
+    public isAlive(): boolean {
+        return this.health.getValue() > 0
     }
 }
