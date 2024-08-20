@@ -1,5 +1,6 @@
 import { Entity } from "./Entity";
 import { IBehavior } from "./interfaces/IBehavior";
+import { Player } from "./Player";
 import { IEnemyProps } from "./types/IEnemyProps";
 
 export class Enemy extends Entity {
@@ -10,5 +11,11 @@ export class Enemy extends Entity {
         super(props)
 
         this.behavior = behavior
+    }
+
+    attack(player: Player){
+        const action = this.behavior.getNextAction()
+        
+        action.execute([player])
     }
 }

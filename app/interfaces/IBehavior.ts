@@ -1,5 +1,5 @@
-import { StaticDamage } from "../damage/StaticDamage"
+import { IAction } from "./IAction";
 
 export interface IBehavior{
-    getNextAction(): void
+    getNextAction(): IAction
 }
