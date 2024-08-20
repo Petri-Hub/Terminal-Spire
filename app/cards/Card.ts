@@ -1,6 +1,6 @@
 import { Entity } from "../Entity"
 import { AnyCost } from "../types/AnyCost"
-import { CardProps } from "../types/CardProps"
+import { CardProps } from "../types/ICardProps"
 
 export abstract class Card{
 

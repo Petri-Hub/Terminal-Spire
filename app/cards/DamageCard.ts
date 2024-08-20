@@ -1,6 +1,6 @@
 import { Entity } from "../Entity";
 import { AnyDamage } from "../types/AnyDamage";
-import { CardProps } from "../types/CardProps";
+import { CardProps } from "../types/ICardProps";
 import { Card } from "./Card";
 
 type DamageCardProps = {
