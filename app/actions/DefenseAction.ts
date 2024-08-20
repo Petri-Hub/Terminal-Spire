@@ -9,7 +9,7 @@ export class DefenseAction implements IAction{
 
     execute(targets: Entity[]): void {
         targets.forEach(entity => {
-            const defenseAmount = this.defense.calculateDefense()
+            const defenseAmount = this.defense.getDefense()
             const targetDefense = entity.getDefense()
 
             targetDefense.increaseBy(defenseAmount)

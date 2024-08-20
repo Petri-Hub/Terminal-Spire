@@ -1,18 +1,13 @@
+import { Entity } from "../Entity"
 import { AnyCost } from "../types/AnyCost"
-
-type CardProps = {
-    id: string,
-    name: string,
-    description: string,
-    cost: AnyCost
-}
+import { CardProps } from "../types/CardProps"
 
 export abstract class Card{
 
-    private id: string
-    private name: string
-    private description: string
-    private cost: AnyCost
+    protected id: string
+    protected name: string
+    protected description: string
+    protected cost: AnyCost
 
     constructor({ id, name, description, cost }: CardProps){
         this.id = id
@@ -20,6 +15,8 @@ export abstract class Card{
         this.description = description
         this.cost = cost
     }
+
+    abstract play(targets: Entity[]): void
 
     getId(): string {
         return this.id
