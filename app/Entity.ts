@@ -1,11 +1,19 @@
 import { NumberBar } from "./NumberBar"
+import { IEntityProps } from "./types/IEntityProps"
 
 export abstract class Entity {
-    constructor(
-        private id: string,
-        private health: NumberBar,
-        private defense: NumberBar
-    ) { }
+
+    protected id: string
+    protected name: string
+    protected health: NumberBar
+    protected defense: NumberBar
+
+    constructor({ id, name, health, defense }: IEntityProps) {
+        this.id = id
+        this.name = name
+        this.health = health
+        this.defense = defense
+    }
 
     public getId(): string {
         return this.id
