@@ -9,7 +9,7 @@ export class DamageAction implements IAction{
 
     execute(targets: Entity[]): void {
         targets.forEach(entity => {
-            const damageAmount = this.damage.calculateDamage()
+            const damageAmount = this.damage.getDamage()
             const targetHealth = entity.getHealth()
 
             targetHealth.decreaseBy(damageAmount)
