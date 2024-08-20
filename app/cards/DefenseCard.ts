@@ -19,7 +19,7 @@ export class DefenseCard extends Card{
 
     play(targets: Entity[]){
         targets.forEach(target => {
-            const defenseAmount = this.defense.getDefense()
+            const defenseAmount = this.defense.calculateDefense()
             const targetDefense = target.getDefense()
 
             targetDefense.increaseBy(defenseAmount)

@@ -19,7 +19,7 @@ export class DamageCard extends Card{
 
     play(targets: Entity[]){
         targets.forEach(target => {
-            const damageAmount = this.damage.getDamage()
+            const damageAmount = this.damage.calculateDamage()
             const targetHealth = target.getHealth()
 
             targetHealth.decreaseBy(damageAmount)

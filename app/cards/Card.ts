@@ -31,7 +31,7 @@ export abstract class Card{
     }
 
     getCost(): number {
-        return this.cost.getCost()
+        return this.cost.calculateCost()
     }
 
     toString(): string {

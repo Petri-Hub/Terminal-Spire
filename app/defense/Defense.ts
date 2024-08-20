@@ -5,7 +5,7 @@ export abstract class Defense<T extends ICalculation>{
         protected calculation: T
     ){}
 
-    getDefense(): number {
+    calculateDefense(): number {
         return this.calculation.calculate()
     }
 }

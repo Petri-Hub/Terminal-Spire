@@ -7,6 +7,6 @@ export class StaticCost extends Cost<StaticCalculation>{
     }
 
     getRepresentation(): string {
-        return this.getCost().toString()
+        return this.calculateCost().toString()
     }
 }

@@ -7,6 +7,6 @@ export class StaticDamage extends Damage<StaticCalculation>{
     }
 
     getRepresentation(): string {
-        return this.getDamage().toString()
+        return this.calculateDamage().toString()
     }
 }

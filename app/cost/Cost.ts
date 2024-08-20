@@ -7,7 +7,7 @@ export abstract class Cost<T extends ICalculation>{
 
     abstract getRepresentation(): string
 
-    getCost(): number {
+    calculateCost(): number {
         return this.calculation.calculate()
     }
 }

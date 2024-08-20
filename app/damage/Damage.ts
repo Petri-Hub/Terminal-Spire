@@ -7,7 +7,7 @@ export abstract class Damage<T extends ICalculation>{
 
     abstract getRepresentation(): string
 
-    getDamage(): number {
+    calculateDamage(): number {
         return this.calculation.calculate()
     }
 }
