@@ -15,7 +15,7 @@ export class Enemy extends Entity {
 
     attack(player: Player){
         const action = this.behavior.getNextAction()
-        const result = action.execute(this, player)
+    const result = action.execute(this, player)
         
         return result
     }

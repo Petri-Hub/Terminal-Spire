@@ -1,9 +1,9 @@
 import { IActionResult } from "../../interfaces/IActionResult";
 
-export class GroupActionResult implements IActionResult{
+export class GroupActionResult implements IActionResult {
     constructor(
         private results: IActionResult[]
-    ){}
+    ) { }
 
     toString() {
         const messages = this.results.map(result => result.toString())

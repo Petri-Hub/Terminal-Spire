@@ -8,9 +8,13 @@ export class ActionGroup implements IAction<GroupActionResult> {
         private actions: AnyAction[]
     ) { }
 
-    execute(performer: Entity, ...targets: Entity[]) {
-        return targets
-            .map(target => this.actions.map(action => action.execute(performer, target)))
-            .map(results => new GroupActionResult(results))
+    execute(performer: Entity, ...targets: Entity[]): GroupActionResult[] {
+        return targets.map(target => {
+            const results = this.actions.map(action => {
+                return action.execute(performer, target)
+            })
+
+            return new GroupActionResult(results)
+        })
     }
 }
