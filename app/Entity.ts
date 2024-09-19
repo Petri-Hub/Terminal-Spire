@@ -22,7 +22,7 @@ export abstract class Entity {
     public getName(): string {
         return this.name
     }
-    
+
     public getHealth(): NumberBar {
         return this.health
     }
@@ -35,11 +35,11 @@ export abstract class Entity {
         return this.health.getValue() > 0
     }
 
-    public static isSameEntities(...entities: Entity[]){
+    public static isSameEntities(...entities: Entity[]) {
         const entityIds = entities.map(entity => entity.getId())
         const uniqueIds = new Set(entityIds)
         const isSameEntities = uniqueIds.size === 1
 
         return isSameEntities
     }
-}
+} 

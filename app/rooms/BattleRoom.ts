@@ -15,13 +15,20 @@ export class BattleRoom implements IRoom {
         } while(player.isAlive() && this.isSomeEnemyAlive())
     }
 
-    private isSomeEnemyAlive(): boolean{
+    private isSomeEnemyAlive(): boolean{        
         return this.enemies.some(enemy => enemy.isAlive())
     }
 
     private handleEnemiesTurns(player: Player){
         this.enemies.forEach(enemy => {
-            enemy.attack(player)
+            console.log(`${enemy.getName().toUpperCase()} turn\n`)
+
+            const actionResults = enemy.act(player)
+            const actionMessages = actionResults.map(result => result.toString())
+
+            actionMessages.forEach(message => {
+                console.log(message + '\n')
+            })
         })
     }
 }

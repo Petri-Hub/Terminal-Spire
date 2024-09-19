@@ -1,6 +1,7 @@
 import { Entity } from "./Entity";
 import { IBehavior } from "./interfaces/IBehavior";
 import { Player } from "./Player";
+import { AnyAction } from "./types/AnyAction";
 import { IEnemyProps } from "./types/IEnemyProps";
 
 export class Enemy extends Entity {
@@ -13,9 +14,9 @@ export class Enemy extends Entity {
         this.behavior = behavior
     }
 
-    attack(player: Player){
+    act(player: Player){
         const action = this.behavior.getNextAction()
-    const result = action.execute(this, player)
+        const result = action.execute(this, player)
         
         return result
     }
