@@ -10,6 +10,7 @@ import { Enemy } from "./Enemy";
 import { NumberBar } from "./NumberBar";
 import { Player } from "./Player";
 import { BattleRoom } from "./rooms/BattleRoom";
+import { Game } from "./types/Game";
 
 const enemy = new Enemy({
     id: crypto.randomUUID(),
@@ -40,7 +41,9 @@ const generator = new DungeonGenerator({
 
 const dungeon = generator.generate()
 
-console.log(dungeon)
+// console.log(dungeon)
+
+new Game().start()
 // const room = new BattleRoom([enemy])
 
 // room.enter(player)
