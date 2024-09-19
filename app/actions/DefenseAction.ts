@@ -1,18 +1,6 @@
-import { IAction } from "../interfaces/IAction";
 import { Entity } from "../Entity";
-import { AnyDefense } from "../types/AnyDefense";
+import { IAction } from "../interfaces/IAction";
+import { DefenseActionResult } from "./results/DefenseActionResult";
 
-export class DefenseAction implements IAction{
-    constructor(
-        private defense: AnyDefense
-    ){}
-
-    execute(targets: Entity[]): void {
-        targets.forEach(entity => {
-            const defenseAmount = this.defense.calculateDefense()
-            const targetDefense = entity.getDefense()
-
-            targetDefense.increaseBy(defenseAmount)
-        })
-    }
+export class DefenseAction implements IAction<DefenseActionResult>{
 }
