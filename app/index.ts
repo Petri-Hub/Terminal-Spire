@@ -4,6 +4,8 @@ import { DefenseAction } from "./actions/DefenseAction";
 import { LoopBehavior } from "./behaviors/LoopBehavior";
 import { StaticDamage } from "./damage/StaticDamage";
 import { StaticDefense } from "./defense/StaticDefense";
+import { Dungeon } from "./dungeon/Dungeon";
+import { DungeonGenerator } from "./dungeon/DungeonGenerator";
 import { Enemy } from "./Enemy";
 import { NumberBar } from "./NumberBar";
 import { Player } from "./Player";
@@ -27,6 +29,18 @@ const player = new Player({
     name: "Player"
 })
 
-const room = new BattleRoom([enemy])
+const generator = new DungeonGenerator({
+    player,
+    floors: {
+        amount: 3,
+        choices: 2,
+        rooms: [new BattleRoom([enemy])]
+    }
+})
 
-room.enter(player)
+const dungeon = generator.generate()
+
+console.log(dungeon)
+// const room = new BattleRoom([enemy])
+
+// room.enter(player)
