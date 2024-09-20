@@ -1,11 +1,15 @@
 import { Enemy } from "../Enemy";
 import { IRoom } from "../interfaces/IRoom";
 import { Player } from "../Player";
+import { BattleRoomProps } from "../types/rooms/BattleRoomProps";
 
 export class BattleRoom implements IRoom {
-    constructor(
-        private enemies: Enemy[]
-    ){}
+
+    private enemies
+
+    constructor({ enemies }: BattleRoomProps){
+        this.enemies = enemies
+    }
 
     enter(player: Player): void {
         do {

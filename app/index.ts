@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { ActionGroup } from "./actions/ActionGroup";
 import { DamageAction } from "./actions/DamageAction";
 import { DefenseAction } from "./actions/DefenseAction";
@@ -10,6 +11,7 @@ import { Enemy } from "./Enemy";
 import { NumberBar } from "./NumberBar";
 import { Player } from "./Player";
 import { BattleRoom } from "./rooms/BattleRoom";
+import { ChoiceRoom } from "./rooms/ChoiceRoom";
 import { Game } from "./types/Game";
 
 const enemy = new Enemy({
@@ -30,20 +32,9 @@ const player = new Player({
     name: "Player"
 })
 
-const generator = new DungeonGenerator({
-    player,
-    floors: {
-        amount: 3,
-        choices: 2,
-        rooms: [new BattleRoom([enemy])]
-    }
-})
-
-const dungeon = generator.generate()
-
 // console.log(dungeon)
 
-new Game().start()
-// const room = new BattleRoom([enemy])
+// new Game().start()
+// // const room = new BattleRoom([enemy])
 
-// room.enter(player)
+// // room.enter(player)
