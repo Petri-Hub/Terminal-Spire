@@ -1,11 +1,11 @@
 import { ICalculation } from '../interfaces/ICalculation'
 
-export abstract class Damage<T extends ICalculation> {
-	constructor(protected calculation: T) {}
+export abstract class Damage {
+	constructor(protected calculation: ICalculation) {}
 
 	abstract getRepresentation(): string
 
-	calculateDamage(): number {
+	public calculateDamage(): number {
 		return this.calculation.calculate()
 	}
 }

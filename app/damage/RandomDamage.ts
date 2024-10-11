@@ -1,12 +1,12 @@
 import { RandomCalculation } from '../calculations/RandomCalculation'
 import { Damage } from './Damage'
 
-export class RandomDamage extends Damage<RandomCalculation> {
+export class RandomDamage extends Damage {
 	constructor(min: number, max: number) {
 		super(new RandomCalculation(min, max))
 	}
 
-	getRepresentation(): string {
+	public getRepresentation(): string {
 		return '?'
 	}
 }

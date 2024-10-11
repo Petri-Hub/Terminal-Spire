@@ -1,10 +1,10 @@
+import { Damage } from '../damage/Damage'
 import { Entity } from '../Entity'
 import { IAction } from '../interfaces/IAction'
-import { AnyDamage } from '../types/AnyDamage'
 import { DamageActionResult } from './results/DamageActionResult'
 
 export class DamageAction implements IAction {
-	constructor(private damage: AnyDamage) {}
+	constructor(private damage: Damage) {}
 
 	public execute(performer: Entity, ...targets: Entity[]): DamageActionResult[] {
 		return targets.map((target) => {

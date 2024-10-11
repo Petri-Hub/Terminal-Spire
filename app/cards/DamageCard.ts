@@ -1,14 +1,14 @@
+import { Damage } from '../damage/Damage'
 import { Entity } from '../Entity'
-import { AnyDamage } from '../types/AnyDamage'
 import { CardProps } from '../types/ICardProps'
 import { Card } from './Card'
 
 type DamageCardProps = {
-	damage: AnyDamage
+	damage: Damage
 } & CardProps
 
 export class DamageCard extends Card {
-	private damage: AnyDamage
+	private damage: Damage
 
 	constructor({ damage, ...props }: DamageCardProps) {
 		super(props)
