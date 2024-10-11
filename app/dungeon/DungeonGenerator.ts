@@ -1,7 +1,12 @@
 import { Player } from '../Player'
+import { FloorsGenerationOptions } from '../types/FloorsGenerationOptions'
 import { Dungeon } from './Dungeon'
 import { FloorsGenerator } from './FloorsGenerator'
-import { DungeonGenerationOptions } from '../types/DungeonGenerationOptions'
+
+type DungeonGenerationOptions = {
+	floors: FloorsGenerationOptions
+	player: Player
+}
 
 export class DungeonGenerator {
 	private floorsGenerator: FloorsGenerator

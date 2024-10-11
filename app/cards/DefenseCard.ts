@@ -1,6 +1,6 @@
 import { Defense } from '../defense/Defense'
 import { Entity } from '../Entity'
-import { CardProps } from '../types/ICardProps'
+import { CardProps } from '../types/CardProps'
 import { Card } from './Card'
 
 type DefenseCardProps = {

@@ -1,5 +1,5 @@
 import { NumberBar } from './NumberBar'
-import { IEntityProps } from './types/IEntityProps'
+import { EntityProps } from './types/EntityProps'
 
 export abstract class Entity {
 	protected id: string
@@ -7,7 +7,7 @@ export abstract class Entity {
 	protected health: NumberBar
 	protected defense: NumberBar
 
-	constructor({ id, name, health, defense }: IEntityProps) {
+	constructor({ id, name, health, defense }: EntityProps) {
 		this.id = id
 		this.name = name
 		this.health = health

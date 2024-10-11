@@ -12,7 +12,7 @@ import { NumberBar } from './NumberBar'
 import { Player } from './Player'
 import { BattleRoom } from './rooms/BattleRoom'
 import { ChoiceRoom } from './rooms/ChoiceRoom'
-import { Game } from './types/Game'
+import { Game } from './Game'
 
 const enemy = new Enemy({
 	id: crypto.randomUUID(),

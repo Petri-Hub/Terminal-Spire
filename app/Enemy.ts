@@ -1,12 +1,12 @@
 import { Entity } from './Entity'
 import { IBehavior } from './interfaces/IBehavior'
 import { Player } from './Player'
-import { IEnemyProps } from './types/IEnemyProps'
+import { EnemyProps } from './types/EnemyProps'
 
 export class Enemy extends Entity {
 	private behavior: IBehavior
 
-	constructor({ behavior, ...props }: IEnemyProps) {
+	constructor({ behavior, ...props }: EnemyProps) {
 		super(props)
 
 		this.behavior = behavior
