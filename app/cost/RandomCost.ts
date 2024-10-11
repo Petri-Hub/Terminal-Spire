@@ -1,12 +1,12 @@
 import { RandomCalculation } from '../calculations/RandomCalculation'
 import { Cost } from './Cost'
 
-export class RandomCost extends Cost<RandomCalculation> {
+export class RandomCost extends Cost {
 	constructor(min: number, max: number) {
 		super(new RandomCalculation(min, max))
 	}
 
-	getRepresentation(): string {
+	public getRepresentation(): string {
 		return '?'
 	}
 }

@@ -1,12 +1,12 @@
+import { Cost } from '../cost/Cost'
 import { Entity } from '../Entity'
-import { AnyCost } from '../types/AnyCost'
 import { CardProps } from '../types/ICardProps'
 
 export abstract class Card {
 	protected id: string
 	protected name: string
 	protected description: string
-	protected cost: AnyCost
+	protected cost: Cost
 
 	constructor({ id, name, description, cost }: CardProps) {
 		this.id = id
