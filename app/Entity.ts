@@ -34,7 +34,7 @@ export abstract class Entity {
 		return this.health.getValue() > 0
 	}
 
-	public static isSameEntities(...entities: Entity[]) {
+	public static isSameEntities(...entities: Entity[]): boolean {
 		const entityIds = entities.map((entity) => entity.getId())
 		const uniqueIds = new Set(entityIds)
 		const isSameEntities = uniqueIds.size === 1

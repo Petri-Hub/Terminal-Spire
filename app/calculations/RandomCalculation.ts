@@ -6,7 +6,7 @@ export class RandomCalculation implements ICalculation {
 		private max: number
 	) {}
 
-	calculate(): number {
+	public calculate(): number {
 		const range = this.min - this.max
 		const value = Math.round(Math.random() * range)
 		const random = value + this.min

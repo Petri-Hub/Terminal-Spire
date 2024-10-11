@@ -10,7 +10,7 @@ export class BattleRoom implements IRoom {
 		this.enemies = enemies
 	}
 
-	enter(player: Player): void {
+	public enter(player: Player): void {
 		do {
 			this.handleEnemiesTurns(player)
 		} while (player.isAlive() && this.isSomeEnemyAlive())
@@ -20,7 +20,7 @@ export class BattleRoom implements IRoom {
 		return this.enemies.some((enemy) => enemy.isAlive())
 	}
 
-	private handleEnemiesTurns(player: Player) {
+	private handleEnemiesTurns(player: Player): void {
 		this.enemies.forEach((enemy) => {
 			console.log(`${enemy.getName().toUpperCase()} turn\n`)
 

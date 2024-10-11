@@ -5,4 +5,8 @@ export class RandomDefense extends Defense {
 	constructor(min: number, max: number) {
 		super(new RandomCalculation(min, max))
 	}
+
+   public getRepresentation(): string {
+      return '?'
+   }
 }

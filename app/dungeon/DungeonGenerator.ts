@@ -17,7 +17,7 @@ export class DungeonGenerator {
 		this.floorsGenerator = new FloorsGenerator(floors)
 	}
 
-	generate(): Dungeon {
+	public generate(): Dungeon {
 		return new Dungeon(this.player, this.floorsGenerator.generate())
 	}
 }

@@ -2,7 +2,7 @@ import { GameDifficultyPrompt } from './prompts/initialization/GameDifficultySel
 import { InitialGameScreenPrompt } from './prompts/initialization/InitialGameScreenPrompt'
 
 export class Game {
-	start(): void {
+	public start(): void {
 		new InitialGameScreenPrompt().show()
 		new GameDifficultyPrompt().show()
 	}

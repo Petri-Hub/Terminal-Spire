@@ -1,19 +1,20 @@
-import chalk from 'chalk'
+import chalk, { ChalkInstance } from 'chalk'
+import { Difficulty } from '../types/Difficulty'
 
-export const difficulties = [
+export const difficulties: (Difficulty & { chalk: ChalkInstance })[] = [
 	{
 		value: 1,
-		title: 'Easy',
+		name: 'Easy',
 		chalk: chalk.green
 	},
 	{
 		value: 2,
-		title: 'Regular',
+		name: 'Regular',
 		chalk: chalk.yellow
 	},
 	{
 		value: 3,
-		title: 'Hard',
+		name: 'Hard',
 		chalk: chalk.red
 	}
 ]

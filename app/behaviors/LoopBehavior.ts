@@ -10,7 +10,7 @@ export class LoopBehavior implements IBehavior {
 		this.current = -1
 	}
 
-	getNextAction(): IAction {
+	public getNextAction(): IAction {
 		this.current = (this.current + 1) % this.actions.length
 
 		const action = this.actions[this.current]
