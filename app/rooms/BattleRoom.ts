@@ -1,7 +1,9 @@
-import { Enemy } from '../Enemy'
+import chalk from 'chalk'
 import { IRoom } from '../interfaces/IRoom'
 import { Player } from '../Player'
 import { BattleRoomProps } from '../types/rooms/BattleRoomProps'
+import { wait } from '../helpers/wait'
+import { EnemyStatusPresenter } from '../presenters/EnemyStatusPresenter'
 
 export class BattleRoom implements IRoom {
 	private enemies
@@ -10,9 +12,10 @@ export class BattleRoom implements IRoom {
 		this.enemies = enemies
 	}
 
-	public enter(player: Player): void {
+	public async enter(player: Player): Promise<void> {
 		do {
-			this.handleEnemiesTurns(player)
+			await this.handlePlayerTurn(player)
+			await this.handleEnemiesTurns(player)
 		} while (player.isAlive() && this.isSomeEnemyAlive())
 	}
 
@@ -20,7 +23,21 @@ export class BattleRoom implements IRoom {
 		return this.enemies.some((enemy) => enemy.isAlive())
 	}
 
-	private handleEnemiesTurns(player: Player): void {
+	public async handlePlayerTurn(player: Player): Promise<void> {
+		console.log(chalk.inverse.bold('-= Player turn =-\n\n'))
+      console.log(chalk.inverse.bold.red('-= Enemies:\n'))
+
+      this.enemies.forEach((enemy, index) => {
+         const presenter = new EnemyStatusPresenter(enemy)
+         const presentation = presenter.present()
+
+         console.log(`#${index + 1} | ${presentation}`) 
+      })
+      
+      await wait(300000)
+	}
+
+	private async handleEnemiesTurns(player: Player): Promise<void> {
 		this.enemies.forEach((enemy) => {
 			console.log(`${enemy.getName().toUpperCase()} turn\n`)
 

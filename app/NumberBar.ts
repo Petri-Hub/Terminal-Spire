@@ -8,6 +8,10 @@ export class NumberBar {
 		return this.value
 	}
 
+   public getMax(): number {
+      return this.max
+   }
+
 	public increaseBy(quantity: number): void {
 		const newValue = this.value + quantity
 		const limitedValue = Math.min(newValue, this.max)
