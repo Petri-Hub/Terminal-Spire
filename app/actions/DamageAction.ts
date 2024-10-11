@@ -3,10 +3,10 @@ import { IAction } from '../interfaces/IAction'
 import { AnyDamage } from '../types/AnyDamage'
 import { DamageActionResult } from './results/DamageActionResult'
 
-export class DamageAction implements IAction<DamageActionResult> {
+export class DamageAction implements IAction {
 	constructor(private damage: AnyDamage) {}
 
-	execute(performer: Entity, ...targets: Entity[]) {
+	public execute(performer: Entity, ...targets: Entity[]): DamageActionResult[] {
 		return targets.map((target) => {
 			const damageAmount = this.damage.calculateDamage()
 			const targetHealth = target.getHealth()
