@@ -1,7 +1,6 @@
 import { Entity } from './Entity'
 import { IBehavior } from './interfaces/IBehavior'
 import { Player } from './Player'
-import { AnyAction } from './types/AnyAction'
 import { IEnemyProps } from './types/IEnemyProps'
 
 export class Enemy extends Entity {

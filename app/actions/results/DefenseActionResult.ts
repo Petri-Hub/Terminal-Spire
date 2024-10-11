@@ -8,7 +8,7 @@ export class DefenseActionResult implements IActionResult {
 		private value: number
 	) {}
 
-	toString() {
+	public toString(): string {
 		const performerName = this.performer.getName()
 		const targetName = this.target.getName()
 		const isPerfomerTheTarget = Entity.isSameEntities(

@@ -1,5 +1,5 @@
-import { AnyAction } from '../types/AnyAction'
+import { IAction } from './IAction'
 
 export interface IBehavior {
-	getNextAction(): AnyAction
+	getNextAction(): IAction
 }

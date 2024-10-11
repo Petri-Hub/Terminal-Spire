@@ -1,10 +1,9 @@
 import { Entity } from '../Entity'
 import { IAction } from '../interfaces/IAction'
-import { AnyAction } from '../types/AnyAction'
 import { GroupActionResult } from './results/GroupActionResult'
 
 export class ActionGroup implements IAction {
-	constructor(private actions: AnyAction[]) {}
+	constructor(private actions: IAction[]) {}
 
 	public execute(performer: Entity, ...targets: Entity[]): GroupActionResult[] {
 		return targets.map((target) => {
