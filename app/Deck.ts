@@ -1,35 +1,34 @@
-import { Card } from "./cards/Card";
+import { Card } from './cards/Card'
 
-export class Deck{
-    
-    private cards: readonly Card[]
-    
-    constructor(cards: Card[]){
-        this.cards = cards
-    }
+export class Deck {
+	private cards: readonly Card[]
 
-    getCards(){
-        return this.cards
-    }
+	constructor(cards: Card[]) {
+		this.cards = cards
+	}
 
-    getCardsAmount(){
-        return this.cards.length
-    }
+	getCards() {
+		return this.cards
+	}
 
-    getRandomCard(){
-        const cardsAmount = this.getCardsAmount()
-        const randomIndex = Math.floor(Math.random() * cardsAmount)
+	getCardsAmount() {
+		return this.cards.length
+	}
 
-        return this.getCards()[randomIndex]
-    }
+	getRandomCard() {
+		const cardsAmount = this.getCardsAmount()
+		const randomIndex = Math.floor(Math.random() * cardsAmount)
 
-    drawCards(amount: number){
-        const drawn: Card[] = []
+		return this.getCards()[randomIndex]
+	}
 
-        while(drawn.length < amount){
-            drawn.push(this.getRandomCard())
-        }
+	drawCards(amount: number) {
+		const drawn: Card[] = []
 
-        return drawn
-    }
+		while (drawn.length < amount) {
+			drawn.push(this.getRandomCard())
+		}
+
+		return drawn
+	}
 }

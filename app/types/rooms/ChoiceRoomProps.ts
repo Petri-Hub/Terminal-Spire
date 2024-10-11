@@ -1,7 +1,7 @@
-import { ChoiceRoomChoice } from "./ChoiceRoomChoice"
+import { ChoiceRoomChoice } from './ChoiceRoomChoice'
 
 export type ChoiceRoomProps = {
-    title: string
-    message: string
-    choices: ChoiceRoomChoice[]
+	title: string
+	message: string
+	choices: ChoiceRoomChoice[]
 }

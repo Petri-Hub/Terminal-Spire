@@ -1,3 +1,3 @@
-export interface ITerminalPrompt<T, K>{
-    show(payload: T): K
+export interface ITerminalPrompt<T, K> {
+	show(payload: T): K
 }

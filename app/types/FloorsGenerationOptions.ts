@@ -1,7 +1,7 @@
-import { IRoom } from "../interfaces/IRoom"
+import { IRoom } from '../interfaces/IRoom'
 
 export type FloorsGenerationOptions = {
-    rooms: [IRoom, ...IRoom[]],
-    choices: number
-    amount: number
+	rooms: [IRoom, ...IRoom[]]
+	choices: number
+	amount: number
 }

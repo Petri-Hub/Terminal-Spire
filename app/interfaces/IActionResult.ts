@@ -1,3 +1,3 @@
-export interface IActionResult{
-    toString(): string
+export interface IActionResult {
+	toString(): string
 }

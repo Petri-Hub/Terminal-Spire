@@ -1,5 +1,5 @@
-import { Enemy } from "../../Enemy"
+import { Enemy } from '../../Enemy'
 
 export type BattleRoomProps = {
-    enemies: Enemy[]
+	enemies: Enemy[]
 }

@@ -1,5 +1,5 @@
-import { Player } from "../Player";
+import { Player } from '../Player'
 
-export interface IRoom{
-    enter(player: Player): void,
+export interface IRoom {
+	enter(player: Player): void
 }

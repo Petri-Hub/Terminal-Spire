@@ -1,6 +1,6 @@
-import { Player } from "../../Player"
+import { Player } from '../../Player'
 
 export type ChoiceRoomChoice = {
-    text: string
-    consequence: (player: Player) => void
+	text: string
+	consequence: (player: Player) => void
 }

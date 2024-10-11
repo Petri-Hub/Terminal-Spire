@@ -1,8 +1,8 @@
-import { AnyCost } from "./AnyCost"
+import { AnyCost } from './AnyCost'
 
 export type CardProps = {
-    id: string,
-    name: string,
-    description: string,
-    cost: AnyCost
+	id: string
+	name: string
+	description: string
+	cost: AnyCost
 }

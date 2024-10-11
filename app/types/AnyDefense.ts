@@ -1,6 +1,4 @@
-import { RandomDefense } from "../defense/RandomDefense";
-import { StaticDefense } from "../defense/StaticDefense";
+import { RandomDefense } from '../defense/RandomDefense'
+import { StaticDefense } from '../defense/StaticDefense'
 
-export type AnyDefense = 
-    StaticDefense |
-    RandomDefense
+export type AnyDefense = StaticDefense | RandomDefense

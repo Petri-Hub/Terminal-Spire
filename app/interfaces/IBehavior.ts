@@ -1,5 +1,5 @@
-import { AnyAction } from "../types/AnyAction";
+import { AnyAction } from '../types/AnyAction'
 
-export interface IBehavior{
-    getNextAction(): AnyAction
+export interface IBehavior {
+	getNextAction(): AnyAction
 }

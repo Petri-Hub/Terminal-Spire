@@ -1,3 +1,3 @@
-export interface ICalculation{
-    calculate(): number
+export interface ICalculation {
+	calculate(): number
 }

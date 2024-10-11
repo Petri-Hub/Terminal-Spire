@@ -1,28 +1,27 @@
-import { Entity } from "../Entity"
-import { AnyDefense } from "../types/AnyDefense"
-import { CardProps } from "../types/ICardProps"
-import { Card } from "./Card"
+import { Entity } from '../Entity'
+import { AnyDefense } from '../types/AnyDefense'
+import { CardProps } from '../types/ICardProps'
+import { Card } from './Card'
 
 type DefenseCardProps = {
-    defense: AnyDefense
+	defense: AnyDefense
 } & CardProps
 
-export class DefenseCard extends Card{
+export class DefenseCard extends Card {
+	private defense: AnyDefense
 
-    private defense: AnyDefense
+	constructor({ defense, ...props }: DefenseCardProps) {
+		super(props)
 
-    constructor({ defense, ...props }: DefenseCardProps){
-        super(props)
+		this.defense = defense
+	}
 
-        this.defense = defense
-    }
+	play(targets: Entity[]) {
+		targets.forEach((target) => {
+			const defenseAmount = this.defense.calculateDefense()
+			const targetDefense = target.getDefense()
 
-    play(targets: Entity[]){
-        targets.forEach(target => {
-            const defenseAmount = this.defense.calculateDefense()
-            const targetDefense = target.getDefense()
-
-            targetDefense.increaseBy(defenseAmount)
-        })
-    }
+			targetDefense.increaseBy(defenseAmount)
+		})
+	}
 }
