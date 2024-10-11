@@ -1,14 +1,14 @@
+import { Defense } from '../defense/Defense'
 import { Entity } from '../Entity'
-import { AnyDefense } from '../types/AnyDefense'
 import { CardProps } from '../types/ICardProps'
 import { Card } from './Card'
 
 type DefenseCardProps = {
-	defense: AnyDefense
+	defense: Defense
 } & CardProps
 
 export class DefenseCard extends Card {
-	private defense: AnyDefense
+	private defense: Defense
 
 	constructor({ defense, ...props }: DefenseCardProps) {
 		super(props)
