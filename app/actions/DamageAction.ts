@@ -16,4 +16,8 @@ export class DamageAction implements IAction {
 			return new DamageActionResult(performer, target, damageAmount)
 		})
 	}
+
+   public getDamageRepresentation(): string {
+      return this.damage.getRepresentation()
+   }
 }

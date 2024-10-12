@@ -7,17 +7,17 @@ export class EnemyIntentPresenter implements IPresenter {
 	constructor(private action: IAction) {}
 
 	public format(): string {
-      if(this.action instanceof DamageAction){
-         return `🗡️  Will attack next turn`
-      }
-      if(this.action instanceof DefenseAction){
-         return `🛡️  Will defend next turn`
-      }
+		if (this.action instanceof DamageAction) {
+			return `🗡️  Will attack for ${this.action.getDamageRepresentation()} next turn`
+		}
+		if (this.action instanceof DefenseAction) {
+			return `🛡️  Will defend next turn`
+		}
 
-      return `❓ Unknown action` 
-   }
+		return `❓ Unknown action`
+	}
 
-   public static format(action: IAction): string {
-      return new EnemyIntentPresenter(action).format()
-   }
+	public static format(action: IAction): string {
+		return new EnemyIntentPresenter(action).format()
+	}
 }

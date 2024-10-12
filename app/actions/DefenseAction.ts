@@ -16,4 +16,8 @@ export class DefenseAction implements IAction {
 			return new DefenseActionResult(performer, target, defenseAmount)
 		})
 	}
+
+   public getDefenseRepresentation(): string {
+      return this.defense.getRepresentation()
+   }
 }
