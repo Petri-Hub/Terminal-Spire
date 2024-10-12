@@ -3,7 +3,8 @@ import { IRoom } from '../interfaces/IRoom'
 import { Player } from '../Player'
 import { BattleRoomProps } from '../types/rooms/BattleRoomProps'
 import { wait } from '../helpers/wait'
-import { EnemyStatusPresenter } from '../presenters/EnemyStatusPresenter'
+import { EnemyBattleStatusPresenter } from '../presenters/EnemyBattleStatusPresenter'
+import { PlayerStatusPresenter } from '../presenters/PlayerStatusPresenter'
 
 export class BattleRoom implements IRoom {
 	private enemies
@@ -24,14 +25,12 @@ export class BattleRoom implements IRoom {
 	}
 
 	public async handlePlayerTurn(player: Player): Promise<void> {
-		console.log(chalk.inverse.bold('-= Player turn =-\n\n'))
+		console.log(chalk.inverse.bold('-= Your turn =-\n'))
+      console.log(PlayerStatusPresenter.format(player) + '\n')
 		console.log(chalk.inverse.bold.red('-= Enemies:\n'))
 
 		this.enemies.forEach((enemy, index) => {
-			const presenter = new EnemyStatusPresenter(enemy)
-			const presentation = presenter.format()
-
-			console.log(`#${index + 1} | ${presentation}`)
+			console.log(`#${index + 1} | ${EnemyBattleStatusPresenter.format(enemy)}`)
 		})
 
 		await wait(300000)

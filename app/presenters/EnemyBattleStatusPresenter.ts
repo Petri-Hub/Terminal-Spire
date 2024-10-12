@@ -3,7 +3,7 @@ import { Enemy } from '../Enemy'
 import { IPresenter } from '../interfaces/IPresenter'
 import { EnemyIntentPresenter } from './EnemyIntentPresenter'
 
-export class EnemyStatusPresenter implements IPresenter {
+export class EnemyBattleStatusPresenter implements IPresenter {
 	constructor(private enemy: Enemy) {}
 
 	public format(): string {
@@ -37,5 +37,9 @@ export class EnemyStatusPresenter implements IPresenter {
       const presenter = new EnemyIntentPresenter(intent)
 
       return presenter.format()
+   }
+
+   public static format(enemy: Enemy): string {
+      return new EnemyBattleStatusPresenter(enemy).format()
    }
 }

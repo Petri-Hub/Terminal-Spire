@@ -16,4 +16,8 @@ export class EnemyIntentPresenter implements IPresenter {
 
       return `❓ Unknown action` 
    }
+
+   public static format(action: IAction): string {
+      return new EnemyIntentPresenter(action).format()
+   }
 }
