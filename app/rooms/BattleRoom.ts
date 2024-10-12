@@ -38,7 +38,9 @@ export class BattleRoom implements IRoom {
 	}
 
 	private async handleEnemiesTurns(player: Player): Promise<void> {
-		this.enemies.forEach((enemy) => {
+		this.enemies
+         .filter(enemy => enemy.isAlive())
+         .forEach((enemy) => {
 			console.log(`${enemy.getName().toUpperCase()} turn\n`)
 
 			const actionResults = enemy.act(player)
