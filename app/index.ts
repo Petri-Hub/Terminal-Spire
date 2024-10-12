@@ -1,6 +1,9 @@
 import { DamageAction } from "./actions/DamageAction"
 import { DefenseAction } from "./actions/DefenseAction"
 import { LoopBehavior } from "./behaviors/LoopBehavior"
+import { DamageCard } from "./cards/DamageCard"
+import { DefenseCard } from "./cards/DefenseCard"
+import { StaticCost } from "./cost/StaticCost"
 import { StaticDamage } from "./damage/StaticDamage"
 import { StaticDefense } from "./defense/StaticDefense"
 import { Enemy } from "./Enemy"
@@ -28,6 +31,24 @@ const enemyB = new Enemy({
 		new DefenseAction(new StaticDefense(3))
 	])
 })
+
+const attackCard = new DamageCard({
+   id: crypto.randomUUID(),
+   name: 'Slash',
+   description: 'Deal 1 damage',
+   cost: new StaticCost(1),
+   damage: new StaticDamage(1),
+})
+
+const attackCard = new DefenseCard({
+   id: crypto.randomUUID(),
+   name: 'Slash',
+   description: 'Deal 1 damage',
+   cost: new StaticCost(1),
+   damage: new StaticDamage(1),
+})
+
+
 
 const player = new Player({
 	id: crypto.randomUUID(),

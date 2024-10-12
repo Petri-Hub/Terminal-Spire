@@ -1,11 +1,13 @@
+import { DamageAction } from '../actions/DamageAction'
+import { DamageActionResult } from '../actions/results/DamageActionResult'
 import { Damage } from '../damage/Damage'
 import { Entity } from '../Entity'
 import { CardProps } from '../types/CardProps'
 import { Card } from './Card'
 
-type DamageCardProps = {
+type DamageCardProps = CardProps & {
 	damage: Damage
-} & CardProps
+}
 
 export class DamageCard extends Card {
 	private damage: Damage
@@ -16,12 +18,12 @@ export class DamageCard extends Card {
 		this.damage = damage
 	}
 
-	play(targets: Entity[]) {
-		targets.forEach((target) => {
-			const damageAmount = this.damage.calculateDamage()
-			const targetHealth = target.getHealth()
+	public play(performer: Entity, ...targets: Entity[]): DamageActionResult[] {
+		return targets.map((target) => {
+         const action = new DamageAction(this.damage)
+         const result = action.execute(performer, target)
 
-			targetHealth.decreaseBy(damageAmount)
+         return result[0]
 		})
 	}
 }

@@ -1,5 +1,6 @@
 import { Cost } from '../cost/Cost'
 import { Entity } from '../Entity'
+import { IActionResult } from '../interfaces/IActionResult'
 import { CardProps } from '../types/CardProps'
 
 export abstract class Card {
@@ -15,25 +16,21 @@ export abstract class Card {
 		this.cost = cost
 	}
 
-	abstract play(targets: Entity[]): void
+	abstract play(performer: Entity, ...targets: Entity[]): IActionResult[]
 
-	getId(): string {
+	public getId(): string {
 		return this.id
 	}
 
-	getName() {
+	public getName(): string {
 		return this.name
 	}
 
-	getDescription(): string {
+	public getDescription(): string {
 		return this.description
 	}
 
-	getCost(): number {
+	public getCost(): number {
 		return this.cost.calculateCost()
-	}
-
-	toString(): string {
-		return `${this.name} | ${this.cost.getRepresentation()} energy`
 	}
 }

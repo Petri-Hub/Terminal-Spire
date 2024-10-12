@@ -15,6 +15,7 @@ export class BattleRoom implements IRoom {
 
 	public async enter(player: Player): Promise<void> {
 		do {
+         console.clear()
 			await this.handlePlayerTurn(player)
 			await this.handleEnemiesTurns(player)
 		} while (player.isAlive() && this.isSomeEnemyAlive())
