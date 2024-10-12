@@ -15,7 +15,7 @@ export class BattleRoom implements IRoom {
 
 	public async enter(player: Player): Promise<void> {
 		do {
-         console.clear()
+			console.clear()
 			await this.handlePlayerTurn(player)
 			await this.handleEnemiesTurns(player)
 		} while (player.isAlive() && this.isSomeEnemyAlive())
@@ -26,12 +26,14 @@ export class BattleRoom implements IRoom {
 	}
 
 	public async handlePlayerTurn(player: Player): Promise<void> {
-		console.log(chalk.inverse.bold('-= Your turn =-\n'))
-      console.log(PlayerStatusPresenter.format(player) + '\n')
-		console.log(chalk.inverse.bold.red('-= Enemies:\n'))
+		console.log(chalk.inverse.bold(' = Your turn = \n'))
+		console.log(PlayerStatusPresenter.format(player) + '\n')
+		console.log(chalk.inverse.bold(' = Enemies = \n'))
 
 		this.enemies.forEach((enemy, index) => {
-			console.log(`#${index + 1} | ${EnemyBattleStatusPresenter.format(enemy)}`)
+			console.log(
+				`#${index + 1} | ${EnemyBattleStatusPresenter.format(enemy)}`
+			)
 		})
 
 		await wait(300000)
@@ -39,16 +41,18 @@ export class BattleRoom implements IRoom {
 
 	private async handleEnemiesTurns(player: Player): Promise<void> {
 		this.enemies
-         .filter(enemy => enemy.isAlive())
-         .forEach((enemy) => {
-			console.log(`${enemy.getName().toUpperCase()} turn\n`)
+			.filter((enemy) => enemy.isAlive())
+			.forEach((enemy) => {
+				console.log(`${enemy.getName().toUpperCase()} turn\n`)
 
-			const actionResults = enemy.act(player)
-			const actionMessages = actionResults.map((result) => result.toString())
+				const actionResults = enemy.act(player)
+				const actionMessages = actionResults.map((result) =>
+					result.toString()
+				)
 
-			actionMessages.forEach((message) => {
-				console.log(message + '\n')
+				actionMessages.forEach((message) => {
+					console.log(message + '\n')
+				})
 			})
-		})
 	}
 }

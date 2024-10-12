@@ -8,7 +8,8 @@ export class PlayerStatusPresenter implements IPresenter{
    public format(): string {
       return [
          this.getHealthInformation(),
-         this.getDefenseInformation()
+         this.getDefenseInformation(),
+         this.getEnergyInformation()
       ].join('\n')
    }
 
@@ -26,6 +27,14 @@ export class PlayerStatusPresenter implements IPresenter{
       const maxDefense = defenseBar.getMax()
 
       return chalk.blue(`${defense}/${maxDefense}🛡️`)
+   }
+
+   private getEnergyInformation(): string {
+      const energyBar = this.player.getEnergy()
+      const energy = energyBar.getValue()
+      const maxEnergy = energyBar.getMax()
+      
+      return chalk.yellow(`${energy}/${maxEnergy}✴️`)
    }
 
    public static format(player: Player): string {
