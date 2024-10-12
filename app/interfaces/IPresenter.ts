@@ -1,3 +1,3 @@
 export interface IPresenter{
-   present(): string
+   format(): string
 }

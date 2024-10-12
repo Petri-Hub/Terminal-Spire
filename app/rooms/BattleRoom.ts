@@ -25,16 +25,16 @@ export class BattleRoom implements IRoom {
 
 	public async handlePlayerTurn(player: Player): Promise<void> {
 		console.log(chalk.inverse.bold('-= Player turn =-\n\n'))
-      console.log(chalk.inverse.bold.red('-= Enemies:\n'))
+		console.log(chalk.inverse.bold.red('-= Enemies:\n'))
 
-      this.enemies.forEach((enemy, index) => {
-         const presenter = new EnemyStatusPresenter(enemy)
-         const presentation = presenter.present()
+		this.enemies.forEach((enemy, index) => {
+			const presenter = new EnemyStatusPresenter(enemy)
+			const presentation = presenter.format()
 
-         console.log(`#${index + 1} | ${presentation}`) 
-      })
-      
-      await wait(300000)
+			console.log(`#${index + 1} | ${presentation}`)
+		})
+
+		await wait(300000)
 	}
 
 	private async handleEnemiesTurns(player: Player): Promise<void> {

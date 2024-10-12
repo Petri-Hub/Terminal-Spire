@@ -6,7 +6,7 @@ import { EnemyIntentPresenter } from './EnemyIntentPresenter'
 export class EnemyStatusPresenter implements IPresenter {
 	constructor(private enemy: Enemy) {}
 
-	public present(): string {
+	public format(): string {
       const about = this.getAboutInformation()
       const healthStatus = this.getHealthStatus() 
       const defenseStatus = this.getDefenseStatus()
@@ -36,6 +36,6 @@ export class EnemyStatusPresenter implements IPresenter {
       const intent = this.enemy.getNextAction()
       const presenter = new EnemyIntentPresenter(intent)
 
-      return presenter.present()
+      return presenter.format()
    }
 }

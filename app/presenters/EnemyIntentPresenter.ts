@@ -6,7 +6,7 @@ import { IPresenter } from '../interfaces/IPresenter'
 export class EnemyIntentPresenter implements IPresenter {
 	constructor(private action: IAction) {}
 
-	public present(): string {
+	public format(): string {
       if(this.action instanceof DamageAction){
          return `🗡️  Will attack next turn`
       }
