@@ -25,15 +25,15 @@ export default class DrawPile {
         return this.cards.pop() ?? null
     }
 
-    public isDrawAmountBiggerThanAvailable(amount: number): boolean {
-        return amount <= this.getCardsAmount()
-    }
-
     public getCardsAmount(): number {
         return this.cards.length
     }
 
-    public spliceRandomCard(): Card {
+    private isDrawAmountBiggerThanAvailable(amount: number): boolean {
+        return amount > this.getCardsAmount()
+    }
+
+    private spliceRandomCard(): Card {
         const cardsAmount = this.getCardsAmount()
         const index = Math.floor(Math.random() * cardsAmount)
         const card = this.cards.splice(index, 1)
