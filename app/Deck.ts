@@ -1,34 +1,30 @@
 import { Card } from './cards/Card'
 
 export class Deck {
-	private cards: readonly Card[]
+	private cards: Card[]
 
 	constructor(cards: Card[]) {
 		this.cards = cards
 	}
 
-	getCards() {
+	public getCards(): readonly Card[] {
 		return this.cards
 	}
 
-	getCardsAmount() {
-		return this.cards.length
+	public addCard(card: Card): void {
+		this.cards.push(card)
 	}
 
-	getRandomCard() {
-		const cardsAmount = this.getCardsAmount()
-		const randomIndex = Math.floor(Math.random() * cardsAmount)
+	public deleteCard(id: string): boolean {
+		const index = this.cards.findIndex((card) => card.getId() === id)
+		const found = index > -1
 
-		return this.getCards()[randomIndex]
-	}
-
-	drawCards(amount: number) {
-		const drawn: Card[] = []
-
-		while (drawn.length < amount) {
-			drawn.push(this.getRandomCard())
+		if(!found){
+			return false
 		}
 
-		return drawn
+		this.cards.splice(index, 1)
+
+		return true
 	}
 }

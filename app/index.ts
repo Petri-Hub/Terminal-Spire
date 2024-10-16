@@ -5,6 +5,7 @@ import { DamageCard } from './cards/DamageCard'
 import { DefenseCard } from './cards/DefenseCard'
 import { StaticCost } from './cost/StaticCost'
 import { StaticDamage } from './damage/StaticDamage'
+import { Deck } from './Deck'
 import { StaticDefense } from './defense/StaticDefense'
 import { Enemy } from './Enemy'
 import { NumberBar } from './NumberBar'
@@ -46,12 +47,18 @@ const defenseCard = new DefenseCard({
 	defense: new StaticDefense(1)
 })
 
+const deck = new Deck([
+	attackCard,
+	defenseCard
+])
+
 const player = new Player({
 	id: crypto.randomUUID(),
 	energy: new NumberBar(3, 3),
 	defense: new NumberBar(0, 20),
 	health: new NumberBar(10, 10),
-	name: 'Jorge'
+	name: 'Jorge',
+	deck
 })
 
 const room = new BattleRoom({
