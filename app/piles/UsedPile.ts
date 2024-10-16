@@ -3,7 +3,7 @@ import { Card } from "../cards/Card";
 export class UsedPile{
     constructor(private cards: Card[]){}
 
-    public add(...cards: Card[]): void {
+    public addCards(...cards: Card[]): void {
         this.cards.push(...cards)
     }
 

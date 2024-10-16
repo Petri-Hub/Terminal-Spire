@@ -3,26 +3,31 @@ import { Card } from "../cards/Card";
 export default class DrawPile {
     constructor(private cards: Card[]) { }
 
-    public draw(amount: number): Card[] {
-        if (this.isDrawAmountBiggerThanAvailable(amount)) {
+
+    public unshift(...card: Card[]): void {
+        this.cards.push(...card)
+    }
+
+    public draw(cardsAmount: number): Card[] {
+        if (this.isDrawAmountBiggerThanAvailable(cardsAmount)) {
             return this.cards.splice(0, Infinity)
         }
 
         const drawn = []
 
-        while (drawn.length < amount) {
+        while (drawn.length < cardsAmount) {
             drawn.push(this.spliceRandomCard())
         }
 
         return drawn
     }
 
-    public push(card: Card): void {
-        this.cards.push(card)
-    }
-
     public pop(): Card | null {
         return this.cards.pop() ?? null
+    }
+
+    public shuffle(): void {
+        this.cards.sort(() => Math.random() - Math.random())
     }
 
     public getCardsAmount(): number {
