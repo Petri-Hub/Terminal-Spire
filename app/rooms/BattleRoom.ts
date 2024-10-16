@@ -36,6 +36,9 @@ export class BattleRoom implements IRoom {
 			)
 		})
 
+		console.log(chalk.inverse.bold('\n = Choose a card = \n'))
+		
+
 		await wait(300000)
 	}
 

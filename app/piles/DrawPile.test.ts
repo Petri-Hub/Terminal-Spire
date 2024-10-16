@@ -1,6 +1,6 @@
-import { DamageCard } from "./cards/DamageCard"
-import { StaticCost } from "./cost/StaticCost"
-import { StaticDamage } from "./damage/StaticDamage"
+import { DamageCard } from "../cards/DamageCard"
+import { StaticCost } from "../cost/StaticCost"
+import { StaticDamage } from "../damage/StaticDamage"
 import DrawPile from "./DrawPile"
 
 describe('DrawPile module', () => {

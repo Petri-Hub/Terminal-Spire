@@ -1,4 +1,4 @@
-import { Card } from "./cards/Card";
+import { Card } from "../cards/Card";
 
 export default class DrawPile {
     constructor(private cards: Card[]) { }
